@@ -1,0 +1,35 @@
+﻿@model List<CRUD.Models.ViewModels.listuserViewModel>
+@{
+    ViewBag.Title = "Datos";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row" style="text-align: right;">
+    <a href="~/users/Nuevo" class="btn btn-primary">Nuevo</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>email</th>
+                <th>password</th>
+                <th></th>
+            </tr>
+            @foreach (var oElemento in Model)
+            {
+                <tr>
+                    <td>@oElemento.id</td>
+                    <td>@oElemento.email</td>
+                    <td>@oElemento.password</td>
+                    <td>
+                        <a class="btn btn-default" href="~/users/Editar/@oElemento.id">Editar</a>
+                        <a class="btn btn-danger" href="~/users/eliminar/@oElemento.id">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

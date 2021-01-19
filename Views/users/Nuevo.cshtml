@@ -1,0 +1,23 @@
+﻿@model CRUD.Models.ViewModels.UserViewModel
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Nuevo", "users", FormMethod.Post))
+{
+<div class="row">
+    <div class="col-md-12">
+        @Html.LabelFor(d => d.email)
+        @Html.TextBoxFor(d => d.email, "", new { @class = " form-control" })
+        @Html.LabelFor(d => d.password)
+        @Html.TextBoxFor(d => d.password, "", new { @class = " form-control" })
+
+        <div class="">
+            <input style="margin-top:10px;" value="Guardar" class="btn btn-primary" type="submit" />
+        </div>
+    </div>
+
+</div>
+}

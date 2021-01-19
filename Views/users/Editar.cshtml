@@ -1,0 +1,25 @@
+﻿@model CRUD.Models.ViewModels.UserViewModel
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>INGRESE LOS NUEVOS DATOS</h2>
+
+@using (Html.BeginForm("Editar", "users", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(d=>d.id)
+
+            @Html.LabelFor(d => d.email)
+            @Html.TextBoxFor(d => d.email, "", new { @class = " form-control" })
+            @Html.LabelFor(d => d.password)
+            @Html.TextBoxFor(d => d.password, "", new { @class = " form-control" })
+
+            <div>
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+            </div>
+        </div>
+
+    </div>
+}
